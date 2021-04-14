@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class BestSelling extends videoGame {
+public class BestSelling extends VideoGame {
     //fields
     private int sales;
     private int rank;
