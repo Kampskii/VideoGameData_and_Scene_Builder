@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Accordion>
         <panes>
@@ -17,12 +17,12 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <ListView layoutY="27.0" prefHeight="153.0" prefWidth="854.0" />
-                        <TextField layoutY="1.0" prefHeight="27.0" prefWidth="118.0" promptText="Title" />
-                        <TextField layoutX="118.0" layoutY="1.0" prefHeight="27.0" prefWidth="183.0" promptText="Developer" />
-                        <TextField layoutX="455.0" layoutY="1.0" prefHeight="27.0" prefWidth="100.0" promptText="Platform(s)" />
-                        <TextField layoutX="298.0" layoutY="1.0" prefHeight="27.0" prefWidth="154.0" promptText="Publisher" />
-                        <TextField layoutX="610.0" layoutY="1.0" prefHeight="27.0" prefWidth="51.0" promptText="Sales" />
-                        <TextField layoutX="556.0" layoutY="1.0" prefHeight="27.0" prefWidth="53.0" promptText="Rank" />
+                        <TextField fx:id="titleField" layoutY="1.0" prefHeight="27.0" prefWidth="118.0" promptText="Title" />
+                        <TextField fx:id="devField" layoutX="118.0" layoutY="1.0" prefHeight="27.0" prefWidth="183.0" promptText="Developer" />
+                        <TextField fx:id="platformField" layoutX="455.0" layoutY="1.0" prefHeight="27.0" prefWidth="100.0" promptText="Platform(s)" />
+                        <TextField fx:id="pubField" layoutX="298.0" layoutY="1.0" prefHeight="27.0" prefWidth="154.0" promptText="Publisher" />
+                        <TextField fx:id="salesField" layoutX="610.0" layoutY="1.0" prefHeight="27.0" prefWidth="51.0" promptText="Sales" />
+                        <TextField fx:id="rankField" layoutX="556.0" layoutY="1.0" prefHeight="27.0" prefWidth="53.0" promptText="Rank" />
                         <TextField layoutX="662.0" layoutY="1.0" prefHeight="27.0" prefWidth="52.0" promptText="Year" />
                         <TextField layoutX="715.0" layoutY="1.0" prefHeight="27.0" prefWidth="76.0" promptText="Date" />
                         <Button layoutX="792.0" layoutY="1.0" mnemonicParsing="false" text="Update" />
@@ -38,9 +38,9 @@
                         <TextField layoutY="1.0" prefHeight="27.0" prefWidth="180.0" promptText="Title" />
                         <TextField layoutX="234.0" layoutY="1.0" prefHeight="27.0" prefWidth="193.0" promptText="Developer" />
                         <TextField layoutX="430.0" layoutY="1.0" prefHeight="27.0" prefWidth="135.0" promptText="Publisher" />
-                        <TextField layoutX="698.0" layoutY="1.0" prefHeight="27.0" prefWidth="77.0" promptText="Dev Cost" />
+                        <TextField fx:id="devCostField" layoutX="698.0" layoutY="1.0" prefHeight="27.0" prefWidth="77.0" promptText="Dev Cost" />
                         <TextField layoutX="563.0" layoutY="1.0" prefHeight="27.0" prefWidth="132.0" promptText="Platform(s)" />
-                        <TextField layoutX="179.0" layoutY="1.0" prefHeight="27.0" prefWidth="53.0" promptText="Year" />
+                        <TextField fx:id="yearField" layoutX="179.0" layoutY="1.0" prefHeight="27.0" prefWidth="53.0" promptText="Year" />
                         <Button layoutX="777.0" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" text="Update" />
                      </children>
                   </AnchorPane>
