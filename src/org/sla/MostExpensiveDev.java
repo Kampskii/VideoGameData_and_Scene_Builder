@@ -1,10 +1,11 @@
-package sample;
+package org.sla;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MostExpensiveDev extends VideoGame {
+public class MostExpensiveDev extends videoGame {
     // Fields
     private String devCost;
     private int releaseYear;
@@ -15,6 +16,7 @@ public class MostExpensiveDev extends VideoGame {
         this.devCost = devCost;
         this.releaseYear = releaseYear;
     }
+
 
     // Setters and Getters
     public int getReleaseYear() { return releaseYear; }
@@ -70,7 +72,7 @@ public class MostExpensiveDev extends VideoGame {
             }
 
 
-            VideoGame videogame = new MostExpensiveDev(publisher, developer, title, devcost, releaseyear, platform);
+            videoGame videogame = new MostExpensiveDev(publisher, developer, title, devcost, releaseyear, platform);
         }
     }
 }

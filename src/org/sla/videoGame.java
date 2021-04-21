@@ -1,27 +1,29 @@
-package sample;
+package org.sla;
 
 import java.util.ArrayList;
 
-public class VideoGame {
+public class videoGame {
     // fields
-  private static ArrayList<VideoGame> videogames;
-  private String title;
-  private String developer;
-  private String publisher;
-  private String platform;
+    private static Controller myController;
+    private static ArrayList<videoGame> videogames;
+    private String title;
+    private String developer;
+    private String publisher;
+    private String platform;
 
-  // Constructors
-    public VideoGame(String title, String developer, String publisher, String platform) {
+    // Constructors
+    public videoGame(String title, String developer, String publisher, String platform) {
         this.title = title;
         this.developer = developer;
         this.publisher = publisher;
         this.platform = platform;
 
         if (videogames == null) {
-           videogames = new ArrayList<VideoGame>();
+           videogames = new ArrayList<videoGame>();
         }
         videogames.add(this);
     }
+
 
     // Setters and Getters
     public String getTitle() { return title; }

@@ -1,10 +1,10 @@
-package sample;
+package org.sla;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class BestSelling extends VideoGame {
+public class BestSelling extends videoGame {
     //fields
     private int sales;
     private int rank;
@@ -106,7 +106,7 @@ public class BestSelling extends VideoGame {
             String developer = lineScanner.next();
             String publisher = lineScanner.next();
 
-            VideoGame videoGame = new BestSelling(title, developer,publisher,platform,sales,rank,releaseYear,releaseDate);
+            videoGame videoGame = new BestSelling(title, developer,publisher,platform,sales,rank,releaseYear,releaseDate);
         }
     }
 }
