@@ -38,12 +38,12 @@
                      <children>
                         <ListView fx:id="mostExpensiveDevListView" layoutY="26.0" prefHeight="344.0" prefWidth="854.0" />
                         <TextField fx:id="title" layoutY="1.0" prefHeight="27.0" prefWidth="180.0" promptText="Title" />
-                        <TextField fx:id="developer" layoutX="234.0" layoutY="1.0" prefHeight="27.0" prefWidth="193.0" promptText="Developer" />
+                        <TextField fx:id="developer" layoutX="234.0" layoutY="1.0" prefHeight="27.0" prefWidth="196.0" promptText="Developer" />
                         <TextField fx:id="publisher" layoutX="430.0" layoutY="1.0" prefHeight="27.0" prefWidth="135.0" promptText="Publisher" />
-                        <TextField fx:id="devCost" layoutX="698.0" layoutY="1.0" prefHeight="27.0" prefWidth="77.0" promptText="Dev Cost" />
-                        <TextField fx:id="platform" layoutX="563.0" layoutY="1.0" prefHeight="27.0" prefWidth="132.0" promptText="Platform(s)" />
-                        <TextField fx:id="year" layoutX="179.0" layoutY="1.0" prefHeight="27.0" prefWidth="53.0" promptText="Year" />
-                        <Button fx:id="updateButton" layoutX="777.0" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" text="Update" />
+                        <TextField fx:id="devCost" layoutX="698.0" layoutY="1.0" prefHeight="27.0" prefWidth="84.0" promptText="Dev Cost" />
+                        <TextField fx:id="platform" layoutX="563.0" layoutY="1.0" prefHeight="27.0" prefWidth="137.0" promptText="Platform(s)" />
+                        <TextField fx:id="year" layoutX="179.0" layoutY="1.0" prefHeight="27.0" prefWidth="57.0" promptText="Year" />
+                        <Button fx:id="updateButton" layoutX="781.0" layoutY="1.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="73.0" text="Update" />
                         <ScrollBar layoutY="26.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="17.0" />
                      </children>
                   </AnchorPane>

@@ -42,7 +42,10 @@ public class Controller {
 
     void updateMostExpensiveDevUI(){
         mostExpensiveDevListView.getItems().clear();
-        //ArrayList<MostExpensiveDev> allMostExpensiveDev = MostExpensiveDev.getAllMostExpensiveDev();
+        ArrayList<MostExpensiveDev> allMostExpensiveDev = MostExpensiveDev.getMostExpensiveDevGames();
+        allMostExpensiveDev.forEach( game -> {
+            mostExpensiveDevListView.getItems().add(game);
+        });
     }
 
     void updateBestSellingUI(){

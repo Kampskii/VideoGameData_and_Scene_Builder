@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class MostExpensiveDev extends videoGame {
     // Fields
-    private static ArrayList<MostExpensiveDev> allMostExpensiveDev;
+    private static ArrayList<MostExpensiveDev> mostExpensiveDevGames;
     private String devCost;
     private int releaseYear;
 
@@ -17,10 +17,10 @@ public class MostExpensiveDev extends videoGame {
         this.devCost = devCost;
         this.releaseYear = releaseYear;
 
-        if (allMostExpensiveDev ==null) {
-            allMostExpensiveDev = new ArrayList<MostExpensiveDev>();
+        if (mostExpensiveDevGames ==null) {
+            mostExpensiveDevGames = new ArrayList<MostExpensiveDev>();
         }
-        allMostExpensiveDev.add(this);
+        mostExpensiveDevGames.add(this);
     }
 
     static void initialize(){
@@ -29,6 +29,14 @@ public class MostExpensiveDev extends videoGame {
     }
 
     // Setters and Getters
+    public static ArrayList<MostExpensiveDev> getMostExpensiveDevGames() {
+        return mostExpensiveDevGames;
+    }
+
+    public static void setMostExpensiveDevGames(ArrayList<MostExpensiveDev> mostExpensiveDevGames) {
+        MostExpensiveDev.mostExpensiveDevGames = mostExpensiveDevGames;
+    }
+
     public int getReleaseYear() { return releaseYear; }
 
     public void setReleaseYear(int releaseYear) { this.releaseYear = releaseYear; }
