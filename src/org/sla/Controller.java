@@ -15,6 +15,8 @@ public class Controller {
     public TextField devCost;
     public TextField platform;
     public Button updateButton;
+    public Button updateButton1;
+
 
     // List view (Dev)
     public ListView<MostExpensiveDev> mostExpensiveDevListView;
@@ -41,6 +43,15 @@ public class Controller {
     void updateMostExpensiveDevUI(){
         mostExpensiveDevListView.getItems().clear();
         //ArrayList<MostExpensiveDev> allMostExpensiveDev = MostExpensiveDev.getAllMostExpensiveDev();
+    }
+
+    void updateBestSellingUI(){
+        bestSellingListView.getItems().clear();
+        ArrayList<BestSelling> allBestSelling = BestSelling.getBestSellingGames();
+        allBestSelling.forEach( game -> {
+            bestSellingListView.getItems().add(game);
+
+        });
     }
 
 }

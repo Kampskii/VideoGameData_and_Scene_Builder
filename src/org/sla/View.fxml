@@ -26,7 +26,7 @@
                         <TextField fx:id="rankField" layoutX="556.0" layoutY="1.0" prefHeight="27.0" prefWidth="53.0" promptText="Rank" />
                         <TextField fx:id="releaseYearField" layoutX="662.0" layoutY="1.0" prefHeight="27.0" prefWidth="52.0" promptText="Year" />
                         <TextField fx:id="releaseDateField" layoutX="715.0" layoutY="1.0" prefHeight="27.0" prefWidth="76.0" promptText="Date" />
-                        <Button fx:id="updateButton" layoutX="792.0" layoutY="1.0" mnemonicParsing="false" text="Update" />
+                        <Button fx:id="updateButton1" layoutX="792.0" layoutY="1.0" mnemonicParsing="false" text="Update" />
                         <ScrollBar layoutY="28.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="17.0" />
                      </children>
                   </AnchorPane>

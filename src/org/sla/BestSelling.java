@@ -2,10 +2,12 @@ package org.sla;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BestSelling extends videoGame {
     //fields
+    private static ArrayList<BestSelling> bestSellingGames;
     private int sales;
     private int rank;
     private int releaseYear;
@@ -20,6 +22,14 @@ public class BestSelling extends videoGame {
         this.releaseDate = releaseDate;
     }
     //setters/getters
+
+    public static ArrayList<BestSelling> getBestSellingGames() {
+        return bestSellingGames;
+    }
+
+    public static void setBestSellingGames(ArrayList<BestSelling> bestSellingGames) {
+        BestSelling.bestSellingGames = bestSellingGames;
+    }
 
     public int getSales() {
         return sales;
@@ -72,6 +82,7 @@ public class BestSelling extends videoGame {
 
     static void initialize(){
         read("BestSellingData");
+        getMyController().updateBestSellingUI();
     }
     static void read(String dataFilePath) {
         // try to create Scanner
