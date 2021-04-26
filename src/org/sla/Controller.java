@@ -34,8 +34,8 @@ public class Controller {
 
     public void initialize() {
         videoGame.setMyController(this);
-        BestSelling.initalize();
-        MostExpensiveDev.initalize();
+        BestSelling.initialize();
+        MostExpensiveDev.initialize();
     }
 
     void updateMostExpensiveDevUI(){

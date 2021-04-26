@@ -69,6 +69,10 @@ public class BestSelling extends videoGame {
 
         return description;
     }
+
+    static void initialize(){
+        read("BestSellingData");
+    }
     static void read(String dataFilePath) {
         // try to create Scanner
         Scanner scanner = null;
@@ -107,6 +111,7 @@ public class BestSelling extends videoGame {
             String publisher = lineScanner.next();
 
             videoGame videoGame = new BestSelling(title, developer,publisher,platform,sales,rank,releaseYear,releaseDate);
+            System.out.println(videoGame);
         }
     }
 }

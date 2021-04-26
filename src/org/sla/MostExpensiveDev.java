@@ -23,7 +23,7 @@ public class MostExpensiveDev extends videoGame {
         allMostExpensiveDev.add(this);
     }
 
-    static void initalize(){
+    static void initialize(){
         read("MostExpensiveData");
         getMyController().updateMostExpensiveDevUI();
     }

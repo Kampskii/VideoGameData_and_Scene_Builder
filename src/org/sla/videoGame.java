@@ -24,7 +24,7 @@ public class videoGame {
         videogames.add(this);
     }
 
-    static void initalize() {
+    static void initialize() {
         getMyController().updateMostExpensiveDevUI();
 
     }
