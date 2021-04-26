@@ -24,8 +24,17 @@ public class videoGame {
         videogames.add(this);
     }
 
+    static void initalize() {
+        getMyController().updateMostExpensiveDevUI();
+
+    }
 
     // Setters and Getters
+
+    public static Controller getMyController() { return myController; }
+
+    public static void setMyController(Controller myController) { videoGame.myController = myController; }
+
     public String getTitle() { return title; }
 
     public void setTitle(String title) { this.title = title; }

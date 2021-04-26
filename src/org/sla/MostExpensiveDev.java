@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class MostExpensiveDev extends videoGame {
     // Fields
-    private static ArrayList<MostExpensiveDev> mostExpensiveDevArrayList;
+    private static ArrayList<MostExpensiveDev> allMostExpensiveDev;
     private String devCost;
     private int releaseYear;
 
@@ -16,8 +16,17 @@ public class MostExpensiveDev extends videoGame {
         super (title, developer, publisher, platform);
         this.devCost = devCost;
         this.releaseYear = releaseYear;
+
+        if (allMostExpensiveDev ==null) {
+            allMostExpensiveDev = new ArrayList<MostExpensiveDev>();
+        }
+        allMostExpensiveDev.add(this);
     }
 
+    static void initalize(){
+        read("MostExpensiveData");
+        getMyController().updateMostExpensiveDevUI();
+    }
 
     // Setters and Getters
     public int getReleaseYear() { return releaseYear; }
@@ -67,13 +76,12 @@ public class MostExpensiveDev extends videoGame {
             String devcost = lineScanner.next();
             int pluslocation = devcost.indexOf("+");
             if (pluslocation != -1) {
-                String cost = devcost.substring( 0,pluslocation - 1);
-            } else {
-                String Devcost = lineScanner.next();
+                devcost = devcost.substring( 0,pluslocation - 1);
             }
 
 
             videoGame videogame = new MostExpensiveDev(publisher, developer, title, devcost, releaseyear, platform);
+            System.out.println(videogame);
         }
     }
 }

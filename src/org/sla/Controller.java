@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
+
 public class Controller {
     // Most Expensive Dev GUI Elements
     public TextField title;
@@ -29,4 +31,16 @@ public class Controller {
 
     // List view (Best)
     public ListView<BestSelling> bestSellingListView;
+
+    public void initialize() {
+        videoGame.setMyController(this);
+        BestSelling.initalize();
+        MostExpensiveDev.initalize();
+    }
+
+    void updateMostExpensiveDevUI(){
+        mostExpensiveDevListView.getItems().clear();
+        //ArrayList<MostExpensiveDev> allMostExpensiveDev = MostExpensiveDev.getAllMostExpensiveDev();
+    }
+
 }
