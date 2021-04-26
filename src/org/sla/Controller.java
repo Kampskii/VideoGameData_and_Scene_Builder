@@ -13,4 +13,20 @@ public class Controller {
     public TextField devCost;
     public TextField platform;
     public Button updateButton;
+
+    // List view (Dev)
+    public ListView<MostExpensiveDev> mostExpensiveDevListView;
+
+    // Best Selling GUI Elements
+    public TextField titleField;
+    public TextField devField;
+    public TextField pubField;
+    public TextField platformField;
+    public TextField rankField;
+    public TextField salesField;
+    public TextField releaseYearField;
+    public TextField releaseDateField;
+
+    // List view (Best)
+    public ListView<BestSelling> bestSellingListView;
 }

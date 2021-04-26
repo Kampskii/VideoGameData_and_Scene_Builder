@@ -12,7 +12,7 @@ public class videoGame {
     private String platform;
 
     // Constructors
-    public videoGame(String title, String developer, String publisher, String platform) {
+    videoGame(String title, String developer, String publisher, String platform) {
         this.title = title;
         this.developer = developer;
         this.publisher = publisher;

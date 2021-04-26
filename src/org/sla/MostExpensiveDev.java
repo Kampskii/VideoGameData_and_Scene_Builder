@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class MostExpensiveDev extends videoGame {
     // Fields
+    private static ArrayList<MostExpensiveDev> mostExpensiveDevArrayList;
     private String devCost;
     private int releaseYear;
 
