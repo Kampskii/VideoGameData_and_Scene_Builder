@@ -20,6 +20,10 @@ public class BestSelling extends videoGame {
         this.rank = rank;
         this.releaseYear = releaseYear;
         this.releaseDate = releaseDate;
+        if (bestSellingGames == null) {
+            bestSellingGames = new ArrayList<BestSelling>();
+        }
+        bestSellingGames.add(this);
     }
     //setters/getters
 
