@@ -50,7 +50,7 @@ public class MostExpensiveDev extends videoGame implements Serializable {
         description = description + " and " + this.getDeveloper();
         description = description + " developed " + this.getTitle();
         description = description + " costing " + this.getDevCost();
-        description = description + " in " + this.getReleaseYear();
+        description = description + " million in " + this.getReleaseYear();
         description = description + " for platform(s) " + this.getPlatform();
         return description;
     }

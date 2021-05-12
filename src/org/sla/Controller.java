@@ -3,7 +3,9 @@ package org.sla;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Controller {
@@ -38,6 +40,35 @@ public class Controller {
         videoGame.setMyController(this);
         BestSelling.initialize();
         MostExpensiveDev.initialize();
+
+        boolean thereWasData = restoreData();
+        if (thereWasData) {
+            updateAllUIs();
+            myAccordion.setExpandedPane(allVideoGamesPane);
+        }
+    }
+
+    // Setters n' Getters
+    public Stage getMyStage() {
+        return myStage;
+    }
+
+    public void setMyStage(Stage myStage) {
+        this.myStage = myStage;
+    }
+
+
+    // Data onAction methods
+    public void importMostExpensiveDev() {
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(myStage);
+        if (selectedFile != null && selectedFile.exists()) {
+            MostExpensiveDev.read(selectedFile.getPath());
+
+            updateMostExpensiveDevUI(MostExpensiveDev.getFirstGame(), 1, MostExpensiveDev.getNumberOfGames());
+            updateMostExpensiveDevUI();
+            myAccordian.setExpandedPane(mostExpensiveDevPane);
+        }
     }
 
     public void saveData() {
