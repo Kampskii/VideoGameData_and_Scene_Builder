@@ -1,11 +1,10 @@
 package org.sla;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BestSelling extends videoGame {
+public class BestSelling extends videoGame implements Serializable {
     //fields
     private static ArrayList<BestSelling> bestSellingGames;
     private int sales;
@@ -130,6 +129,36 @@ public class BestSelling extends videoGame {
         }
     }
 }
+    static public boolean save() {
+        if (bestSellingGames != null && !bestSellingGames.isEmpty()) {
+            // write (serialize) the model objects
+            try {
+                File savedModelFile = new File("serializedBestSellingGames");
+                FileOutputStream savedModelFileStream = new FileOutputStream(savedModelFile);
+                ObjectOutputStream out = new ObjectOutputStream(savedModelFileStream);
+                out.writeObject(bestSellingGames);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
 
+            static public boolean restore() {
+                // try to read (deserialize) model objects from disk
+                File savedModelFile = new File("serializedBestSellingGames");
+                if (savedModelFile.exists()) {
+                    try {
+                        FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
+                        ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
+                        bestSellingGames = (ArrayList<BestSelling>) in.readObject();
+                        if (!bestSellingGames.isEmpty()) {
+                            return true;
+                        }
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
+                return false;
+            }
 
-
+        }
+    }
