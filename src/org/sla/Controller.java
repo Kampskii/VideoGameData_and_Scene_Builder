@@ -40,6 +40,23 @@ public class Controller {
         MostExpensiveDev.initialize();
     }
 
+    public void saveData() {
+        videoGame.save();
+        MostExpensiveDev.save();
+        BestSelling.save();
+    }
+
+    public boolean restoreData(){
+        boolean gameRestored = videoGame.restore();
+        boolean mostExpensiveDevRestored = MostExpensiveDev.restore();
+        boolean bestSellingRestored = BestSelling.restore();
+        if (gameRestored || mostExpensiveDevRestored || bestSellingRestored) {
+            videoGame.describeAll();
+            return true;
+        }
+        return false;
+    }
+
     void updateMostExpensiveDevUI(){
         mostExpensiveDevListView.getItems().clear();
         ArrayList<MostExpensiveDev> allMostExpensiveDev = MostExpensiveDev.getMostExpensiveDevGames();

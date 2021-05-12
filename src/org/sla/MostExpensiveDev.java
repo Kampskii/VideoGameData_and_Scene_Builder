@@ -1,11 +1,10 @@
 package org.sla;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MostExpensiveDev extends videoGame {
+public class MostExpensiveDev extends videoGame implements Serializable {
     // Fields
     private static ArrayList<MostExpensiveDev> mostExpensiveDevGames;
     private String devCost;
@@ -92,4 +91,35 @@ public class MostExpensiveDev extends videoGame {
             System.out.println(videogame);
         }
     }
+
+    static public void save() {
+        if (mostExpensiveDevGames != null &&mostExpensiveDevGames.isEmpty()) {
+            try {
+                File savedModelFile = new File("serializedAllMostExpensiveDev");
+                FileOutputStream savedModelFileStream = new FileOutputStream(savedModelFile);
+                ObjectOutputStream out = new ObjectOutputStream(savedModelFileStream);
+                out.writeObject(mostExpensiveDevGames);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    static public boolean restore() {
+        File savedModelFile = new File("serialziedAllBestSelling");
+        if (savedModelFile.exists()) {
+            try {
+                FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
+                ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
+                mostExpensiveDevGames = (ArrayList<MostExpensiveDev>)in.readObject();
+                if(!mostExpensiveDevGames.isEmpty()) {
+                    return true;
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return false;
+    }
+
 }

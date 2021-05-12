@@ -1,8 +1,9 @@
 package org.sla;
 
+import java.io.*;
 import java.util.ArrayList;
 
-public class videoGame {
+public class videoGame implements Serializable {
     // fields
     private static Controller myController;
     private static ArrayList<videoGame> videogames;
@@ -52,6 +53,37 @@ public class videoGame {
     public void setPlatform(String platform) { this.platform = platform; }
 
     // Methods
+    static public void save() {
+        if (videogames != null && !videogames.isEmpty()){
+            try {
+                File savedModelFile = new File("serializedAllVideoGames");
+                FileOutputStream savedModelFileStream = new FileOutputStream(savedModelFile);
+                ObjectOutputStream out = new ObjectOutputStream(savedModelFileStream);
+                out.writeObject(videogames);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    static public boolean restore() {
+        File savedModelFile = new File("serializedAllVideoGames");
+        if (savedModelFile.exists()) {
+            try {
+                FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
+                ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
+                videogames = (ArrayList<videoGame>)in.readObject();
+                if (!videogames.isEmpty()) {
+                    return true;
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+
     public String toString(){
         String description = "\"" + this.getTitle();
         description = description + "\" was developed by " + this.getDeveloper();

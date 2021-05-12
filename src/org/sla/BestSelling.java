@@ -128,8 +128,7 @@ public class BestSelling extends videoGame implements Serializable {
             System.out.println(videoGame);
         }
     }
-}
-    static public boolean save() {
+    static public void save() {
         if (bestSellingGames != null && !bestSellingGames.isEmpty()) {
             // write (serialize) the model objects
             try {
@@ -141,24 +140,24 @@ public class BestSelling extends videoGame implements Serializable {
                 ex.printStackTrace();
             }
         }
-
-            static public boolean restore() {
-                // try to read (deserialize) model objects from disk
-                File savedModelFile = new File("serializedBestSellingGames");
-                if (savedModelFile.exists()) {
-                    try {
-                        FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
-                        ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
-                        bestSellingGames = (ArrayList<BestSelling>) in.readObject();
-                        if (!bestSellingGames.isEmpty()) {
-                            return true;
-                        }
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
-                }
-                return false;
-            }
-
-        }
     }
+
+    static public boolean restore() {
+        // try to read (deserialize) model objects from disk
+        File savedModelFile = new File("serializedBestSellingGames");
+        if (savedModelFile.exists()) {
+            try {
+                FileInputStream savedModelFileStream = new FileInputStream(savedModelFile);
+                ObjectInputStream in = new ObjectInputStream(savedModelFileStream);
+                bestSellingGames = (ArrayList<BestSelling>) in.readObject();
+                if (!bestSellingGames.isEmpty()) {
+                    return true;
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return false;
+        }
+
+}
