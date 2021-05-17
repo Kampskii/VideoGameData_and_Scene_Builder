@@ -44,8 +44,7 @@ public class Controller {
 
     public void initialize() {
         videoGame.setMyController(this);
-        BestSelling.initialize();
-        MostExpensiveDev.initialize();
+
 
         boolean thereWasData = restoreData();
         if (thereWasData) {
@@ -124,5 +123,7 @@ public class Controller {
         updateBestSellingUI();
         updateAllUIs();
     }
+
+
 
 }
