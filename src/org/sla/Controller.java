@@ -1,14 +1,15 @@
 package org.sla;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.ArrayList;
 
 public class Controller {
+    private Stage myStage;
+
     // Most Expensive Dev GUI Elements
     public TextField title;
     public TextField developer;
@@ -19,6 +20,11 @@ public class Controller {
     public Button updateButton;
     public Button updateButton1;
 
+    // Accordion Layout Panes
+    public Accordion myAccordion;
+    public TitledPane mostExpensiveDevPane;
+    public TitledPane bestSellingPane;
+    public TitledPane allVideoGamesPane;
 
     // List view (Dev)
     public ListView<MostExpensiveDev> mostExpensiveDevListView;
@@ -49,13 +55,9 @@ public class Controller {
     }
 
     // Setters n' Getters
-    public Stage getMyStage() {
-        return myStage;
-    }
+    public Stage getMyStage() { return myStage; }
 
-    public void setMyStage(Stage myStage) {
-        this.myStage = myStage;
-    }
+    public void setMyStage(Stage myStage) { this.myStage = myStage; }
 
 
     // Data onAction methods
@@ -65,9 +67,21 @@ public class Controller {
         if (selectedFile != null && selectedFile.exists()) {
             MostExpensiveDev.read(selectedFile.getPath());
 
-            updateMostExpensiveDevUI(MostExpensiveDev.getFirstGame(), 1, MostExpensiveDev.getNumberOfGames());
             updateMostExpensiveDevUI();
-            myAccordian.setExpandedPane(mostExpensiveDevPane);
+            updateMostExpensiveDevUI();
+            myAccordion.setExpandedPane(mostExpensiveDevPane);
+        }
+    }
+
+    public void importBestSelling() {
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(myStage);
+        if (selectedFile != null && selectedFile.exists()) {
+            BestSelling.read(selectedFile.getPath());
+
+            updateBestSellingUI();
+            updateBestSellingUI();
+            myAccordion.setExpandedPane(bestSellingPane);
         }
     }
 
@@ -103,6 +117,12 @@ public class Controller {
             bestSellingListView.getItems().add(game);
 
         });
+    }
+
+    void updateAllUIs() {
+        updateMostExpensiveDevUI();
+        updateBestSellingUI();
+        updateAllUIs();
     }
 
 }

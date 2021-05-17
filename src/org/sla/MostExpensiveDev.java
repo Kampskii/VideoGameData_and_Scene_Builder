@@ -28,13 +28,9 @@ public class MostExpensiveDev extends videoGame implements Serializable {
     }
 
     // Setters and Getters
-    public static ArrayList<MostExpensiveDev> getMostExpensiveDevGames() {
-        return mostExpensiveDevGames;
-    }
+    public static ArrayList<MostExpensiveDev> getMostExpensiveDevGames() { return mostExpensiveDevGames; }
 
-    public static void setMostExpensiveDevGames(ArrayList<MostExpensiveDev> mostExpensiveDevGames) {
-        MostExpensiveDev.mostExpensiveDevGames = mostExpensiveDevGames;
-    }
+    public static void setMostExpensiveDevGames(ArrayList<MostExpensiveDev> mostExpensiveDevGames) { MostExpensiveDev.mostExpensiveDevGames = mostExpensiveDevGames; }
 
     public int getReleaseYear() { return releaseYear; }
 
